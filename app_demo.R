@@ -43,6 +43,11 @@ ui <- fluidPage(
                   choices = unique(batter_data$batter_name),
                   selected = "Edwin Encarnacion"),
       
+      selectInput("ballpark", 
+                  label = "Ballpark",
+                  choices = c("CLE"),
+                  selected = "CLE"),
+      
       
       radioButtons("balls",
                    label = "Balls",
@@ -68,7 +73,7 @@ ui <- fluidPage(
                   tabPanel("Optimal batter decisions",
                            plotOutput("should_swing")
                   ),
-                  tabPanel("Plate Discipline Tendencies",
+                  tabPanel("Plate discipline tendencies",
                            uiOutput("prob_bad"),
                            uiOutput("dec_type"),
                            plotOutput("pd_tend")
